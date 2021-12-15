@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FlexModalService } from '../shared-components/flex-modal/flex-modal.service';
 import { Http } from '@angular/http';
+import { clear } from 'console';
 
 @Component({
   selector: 'app-orders',
@@ -74,8 +75,6 @@ export class OrdersComponent implements OnInit {
     console.log('from calculate() total: ', total, 'taxAmount', taxAmount, 'subTotal', subTotal);
     return {
       total: total
-        taxAmount: taxAmount
-        subTotal: subTotal
     }
 
   }
@@ -136,7 +135,9 @@ export class OrdersComponent implements OnInit {
         })
 
         break;
-
     }
+  }
+  clear(){
+    this.orders = [];
   }
 }
